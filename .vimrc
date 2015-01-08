@@ -25,6 +25,27 @@ set mousehide		" Hide the mouse when typing text
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
 
+" Map ; to : to save keystrokes
+map ; :
+
+" Copy using the system clipboard
+map <C-c> "+y<CR>
+
+" Autosave session
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
+
+" Save on Ctrl-s
+inoremap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>
+
+" Copy and paste with Ctrl-c and Ctrl-v
+vmap <C-c> "py
+nmap <C-c> "pyiw
+vmap <C-v> "pp
+nmap <C-v> "pP
+imap <C-v> <Esc>"ppa
+
 " Only do this for Vim version 5.0 and later.
 if version >= 500
 
